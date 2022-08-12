@@ -40,11 +40,12 @@ const ToDoAddBtn = () => {
           }`}
           placeholder="Tapşırığı daxil edin"
         />
-        <img
+        <button
           className="absolute right-2.5 bottom-3 cursor-pointer"
           onClick={handleSubmit}
-          src="./plus-icon.svg"
-        />
+        >
+          <img src="./plus-icon.svg" />
+        </button>
       </div>
       {/* Todo ~ Err msg*/}
 
