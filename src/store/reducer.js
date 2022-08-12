@@ -3,7 +3,7 @@ export const initialState = { todo: [], errMessage: false };
 const reducer = (state, action) => {
   switch (action.type) {
     case "IS_ERR_MSG":
-      return { ...state, errMesage: action.payload };
+      return { ...state, errMessage: action.payload };
     case "DELETE_ALL_TO_DO":
       return { ...state, todo: [] };
     case "ADD_TO_DO":
