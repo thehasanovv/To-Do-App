@@ -13,6 +13,16 @@ const reducer = (state, action) => {
         ...state,
         todo: state.todo.filter((item) => item.id !== action.payload),
       };
+    case "TODO_CHECKED":
+      return {
+        ...state,
+        todo: state.todo.map((item) => {
+          if (item.id === action.payload) {
+            return { ...item, completed: !item.completed };
+          }
+          return item;
+        }),
+      };
     default:
       return state;
   }

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useStateValue } from "../store/ToDoProvider";
+import { toast } from "react-toastify";
 
 const ToDoAddBtn = () => {
   const [inputValue, setInputValue] = useState("");
   const [state, dispatch] = useStateValue();
-
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -13,13 +13,15 @@ const ToDoAddBtn = () => {
   const handleSubmit = () => {
     if (!inputValue) {
       dispatch({ type: "IS_ERR_MSG", payload: true });
+      toast.error("Xana boşdur!");
       return;
     }
     dispatch({ type: "IS_ERR_MSG", payload: false });
     dispatch({
       type: "ADD_TO_DO",
-      payload: { id: nanoid(), listItem: inputValue },
+      payload: { id: nanoid(), listItem: inputValue, completed: false },
     });
+    toast.success("Tapşırıq əlavə edildi!");
     setInputValue("");
   };
 
@@ -47,13 +49,6 @@ const ToDoAddBtn = () => {
           <img src="./plus-icon.svg" />
         </button>
       </div>
-      {/* Todo ~ Err msg*/}
-
-      {state.errMessage && (
-        <p className="mt-1 text-sm text-red-600 dark:text-red-500">
-          <span className="font-medium">Xana boşdur</span>
-        </p>
-      )}
     </>
   );
 };
