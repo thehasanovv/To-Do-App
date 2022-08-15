@@ -39,7 +39,7 @@ const ToDoList = () => {
               />
               <span
                 className={`break-words w-full ${
-                  data.completed && "line-through"
+                  data.completed && "line-through opacity-60"
                 }`}
               >
                 {data.listItem}
