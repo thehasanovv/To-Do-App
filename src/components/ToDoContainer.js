@@ -5,7 +5,7 @@ import ToDoCount from "./ToDoCount";
 const ToDoContainer = () => {
   return (
     <div className="relative font-sans h-screen bg-gray-100">
-      <img src="./bg-top.svg" className=" w-full" />
+      <img src="./background.png" className=" w-full" alt="background" />
       <div className="absolute top-16 w-[36rem] left-1/2 -translate-x-1/2">
         <ToDoAddBtn />
         <ToDoList />

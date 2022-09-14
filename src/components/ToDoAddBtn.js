@@ -46,7 +46,7 @@ const ToDoAddBtn = () => {
           className="absolute right-2.5 bottom-3 cursor-pointer"
           onClick={handleSubmit}
         >
-          <img src="./plus-icon.svg" />
+          <img src="./plus-icon.svg" alt="add button"/>
         </button>
       </div>
     </>

@@ -23,7 +23,7 @@ const ToDoList = () => {
         {/* Empty div */}
         {state.todo.length === 0 && (
           <div className="flex justify-center items-center w-full h-full">
-            <img src="./empty.svg" />
+            <img src="./empty.svg" alt="empty" />
           </div>
         )}
         {/* Data map */}
@@ -50,7 +50,7 @@ const ToDoList = () => {
               onClick={removeHandler.bind(null, data.id)}
               className="ml-auto text-red-400 text-sm cursor-pointer invisible group-hover:visible"
             >
-              <img src="./delete-icon.svg" />
+              <img src="./delete-icon.svg" alt="delete" />
             </button>
           </div>
         ))}
