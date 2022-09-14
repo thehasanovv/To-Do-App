@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const ToDoList = () => {
   const [state, dispatch] = useStateValue();
 
+  console.log("re render to do list");
   const handleChange = (id, e) => {
     dispatch({ type: "TODO_CHECKED", payload: id });
   };
@@ -22,7 +23,7 @@ const ToDoList = () => {
         {/* Empty div */}
         {state.todo.length === 0 && (
           <div className="flex justify-center items-center w-full h-full">
-            <img src="./empty.svg " />
+            <img src="./empty.svg" />
           </div>
         )}
         {/* Data map */}
@@ -59,3 +60,4 @@ const ToDoList = () => {
 };
 
 export default ToDoList;
+// export default React.memo(ToDoList);

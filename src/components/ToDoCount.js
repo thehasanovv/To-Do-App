@@ -1,8 +1,10 @@
 import { useStateValue } from "../store/ToDoProvider";
 import { toast } from "react-toastify";
+import React from "react";
 
 const ToDoCount = () => {
   const [state, dispatch] = useStateValue();
+  console.log("re render to do count");
 
   const completedToDo = state.todo?.reduce((acc, item) => {
     if (item.completed) {
@@ -30,4 +32,5 @@ const ToDoCount = () => {
   );
 };
 
-export default ToDoCount;
+// export default ToDoCount;
+export default React.memo(ToDoCount);
